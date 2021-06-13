@@ -1,11 +1,13 @@
+import './imageList.css';
+import ImageTile from './imageTile';
 
 const ImageList = props => {
-  const images = props.images.map(({description, id, urls}) => {
-    return <img alt= {description} key = {id} src={urls.regular} />
+  const images = props.images.map((image) => {
+    return <ImageTile key ={image.id} image={image}/>
   });
 
 
-  return <div>
+  return <div className = "image-list">
     {images}
   </div>
 };
